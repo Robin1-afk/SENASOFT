@@ -1,0 +1,33 @@
+.container-fluid {
+  /* Aquí el origen de la imagen */
+  background-image: url('https://blog.powerdata.es/hubfs/blog-image-uploads/gesti%C3%B3n%20por%20procesos%20de%20una%20empresa.jpg');
+
+  /* Fijar la imagen de fondo este vertical y
+    horizontalmente y centrado */
+  background-position: center center;
+
+  /* Esta imagen no debe de repetirse */
+  background-repeat: no-repeat;
+
+  /* COn esta regla fijamos la imagen en la pantalla. */
+  background-attachment: fixed;
+
+  /* La imagen ocupa el 100% y se reescala */
+  background-size: cover;
+
+  /* Damos un color de fondo mientras la imagen está cargando  */
+  background-color: #464646;
+
+
+  height: 730px;
+
+  display: block;
+
+
+}
+.form-horizontal{
+  margin-top: 5 0px;
+}
+.container-fluid{
+  margin-top: -40px
+}
