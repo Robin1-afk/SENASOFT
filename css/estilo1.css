@@ -1,0 +1,16 @@
+#imagen{
+	width: 300px;
+	height: 300px;
+	padding: 10px;
+	border: 15px solid #4e73df;
+	margin: 5px;
+}
+.container-fluid {
+ height:790px;
+
+  display: block;
+
+}
+a{
+	text-decoration:none;
+}
