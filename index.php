@@ -59,21 +59,17 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" style="width: 270px">
                 <div class="container">
-
-
-
-<!-- inicio form logeo-->
-                    <form class="form-horizontal" action="configuracion/logeo.php" method="post">
+                    <form class="form-horizontal" action="empresa.php">
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="email" placeholder="Enter email" name="usuario">
+                          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
                         <div class="col-sm-10">          
-                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="clave">
+                          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                         </div>
                       </div>
                       <div class="form-group">        
@@ -83,11 +79,6 @@
                         </div>
                       </div>
                     </form>
-<!-- fin form logeo-->
-
-
-
-
                   </div>
               </div>
             </li>
@@ -107,34 +98,36 @@
                     
                       <div class="container" id="container">
                           <h2 align="text-center">Registrate Empresa</h2>
-                          <form class="form-horizontal" action="registros/registro_empre.php" method="post">
+                          <form class="form-horizontal" action="" >
                             <div class="form-group">
                               
                               <div class="col-sm-10">
-                                <input type="number" class="form-control"  placeholder="Nit" name="nit">
+                                <input type="number" class="form-control" id="Nit" placeholder=" Nit" name="Nit">
                               </div>
                             </div>
                             <div class="form-group">
                               
                               <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="nombre de empresa" name="nombre">
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre de empresa" name="nombre">
                               </div>
                             </div>
                             <div class="form-group">
                               
                               <div class="col-sm-10">
-                                <input type="email" class="form-control"  placeholder="Email" name="email">
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                               </div>
                             </div>
                             <div class="form-group">
                               
                               <div class="col-sm-10">          
-                                <input type="password" class="form-control"  placeholder="Contaseña" name="contraseña">
+                                <input type="password" class="form-control" id="pwd" placeholder="Contaseña" name="contraseña">
                               </div>
                             </div>
                             <div class="form-group">
                               
-                              
+                              <div class="col-sm-10">          
+                                <input type="text" class="form-control" id="pwd" placeholder="telefono" name="telefono">
+                              </div>
                             </div>
                             <div class="form-group">        
                               <div class="col-sm-offset-2 col-sm-10">
