@@ -63,11 +63,7 @@
           <span>Envio a sucuarsales</span></a>
       </li>
        <hr class="sidebar-divider my-0">
-      <li class="nav-item">
-        <a class="nav-link" href="facturacion.php">
-          
-          <span>Facturacion</span></a>
-      </li>
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -230,7 +226,8 @@
                     </tr>
                   <tbody>  
 
-<?php require "configuracion/crud.php" ;
+<?php
+ require "configuracion/crud.php" ;
 
 $sql = "SELECT * FROM proveedor";
 $verificar = $conexion->query($sql);

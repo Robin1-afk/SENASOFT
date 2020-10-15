@@ -1,12 +1,3 @@
-<?php
-session_start();
-require('configuracion/crud.php');
-
-if (isset($_SESSION['Email'])) {
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +63,11 @@ if (isset($_SESSION['Email'])) {
           <span>Envio a sucuarsales</span></a>
       </li>
        <hr class="sidebar-divider my-0">
-      
+      <li class="nav-item">
+        <a class="nav-link" href="facturacion.php">
+          
+          <span>Facturacion</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -132,16 +127,16 @@ if (isset($_SESSION['Email'])) {
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['Nombre_Completo'] ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">nombre empresa</span>
                 <img class="img-profile rounded-circle" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                
-                <a class="dropdown-item" href="configuracion/cerrar.php"  data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"> </i>Logout
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
                 </a>
-                
               </div>
             </li>
 
@@ -198,10 +193,6 @@ if (isset($_SESSION['Email'])) {
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-<?php
-}else{
-  echo "<script>location.href='index.php'</script>";
-}
-?>
+
 </body>
   </html>

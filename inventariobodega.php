@@ -1,11 +1,11 @@
 <?php
-session_start();  
-require('configuracion/crud.php');
-if (isset($_SESSION['Email'])) {
 
-
+session_start();
+require "configuracion/crud.php";
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,11 +131,11 @@ if (isset($_SESSION['Email'])) {
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['Nombre_Completo']  ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">nombre sucursal</span>
                 <img class="img-profile rounded-circle" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
               </a>
               <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                   <a href="" style="text-decoration: none;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                   </a>
@@ -148,24 +148,26 @@ if (isset($_SESSION['Email'])) {
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-<div class="container-fluid">
-                      <h1 class="h3 mb-2 text-gray-800">Mis sucursales</h1>
-    <form id="contact-form" method="post" action="registros/re_sucursal.php" role="form">
+        <div class="container-fluid">
+             <h1 class="h3 mb-2 text-gray-800">Inventario Bodega</h1>
+
+
+    <form id="contact-form" method="post" action="registro/re_inventario" role="form">
 
       <div class="controls">
   
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                      <label for="form_name">NIT</label>
-                      <input id="form_name" type="text" name="direccion" class="form-control" placeholder="ingrese nit *" required="required" data-error="Firstname is required.">
+                      <label for="form_name">Producto</label>
+                      <input id="form_name" type="text" name="producto" class="form-control" placeholder="ingrese Producto " required="required" data-error="Firstname is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
               <div class="col-md-6">
                   <div class="form-group">
-                      <label for="form_lastname">Nombre sucursal</label>
-                      <input id="form_lastname" type="text" name="nombre" class="form-control" placeholder="Nombre de la sucursal *" required="required" data-error="Lastname is required.">
+                      <label for="form_lastname">Precio</label>
+                      <input id="form_lastname" type="text" name="precio" class="form-control" placeholder="Ingresar cantidad " required="required" data-error="Lastname is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -173,19 +175,34 @@ if (isset($_SESSION['Email'])) {
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                      <label for="form_email">Email </label>
-                      <input id="form_email" type="email" name="email" class="form-control" placeholder=" Email *" required="required" data-error="Valid email is required.">
+                      <label for="form_marca">Cantidad</label>
+                      <input id="form_marca" type="number" name="cantidad" class="form-control" placeholder=" Prescio del producto" required="required" data-error="Valid email is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
-              <div class="col-md-6">
+  <div class="col-md-6">
                   <div class="form-group">
-                      <label for="form_email">Telefono</label>
-                      <input id="form_name" type="text" name="Telefono" class="form-control" placeholder="Telefono *" required="required" data-error="Valid email is required.">
+                      <label for="form_email">Sucursal</label>
+                       <select class="custom-select" id="inputGroupSelect04" name="proveedor">
+                    <option selected>Choose...</option>  <?php
+        $sql = "SELECT * FROM Sucursal";
+$verificar = $conexion->query($sql);
+while($row = $verificar->fetch_array(MYSQLI_ASSOC)){
+
+  ?>              
+  <option value="<?php $row['ID_Sucursal']?>"> <?php echo $row['Nombre']?> </option>
+                      <?php } ?>  
+                      </select>
+
+
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
               
+              
+          </div>
+
+        
               
           </div>
           <div class="col-md-12">
@@ -193,14 +210,13 @@ if (isset($_SESSION['Email'])) {
           </div>
   
     </form>
-   
             <br><br><br>
      
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabla de sucursales</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabla de inventario bodega</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -209,32 +225,24 @@ if (isset($_SESSION['Email'])) {
                     <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                     <tr>
                       <th rowspan="1" colspan="1">#</th>
-                      <th rowspan="1" colspan="1">Nit</th>
-                      <th rowspan="1" colspan="1">Nombre sucursal</th>
-                      <th rowspan="1" colspan="1">Email</th>
-                      <th rowspan="1" colspan="1">telefono</th>
+                      <th rowspan="1" colspan="1">Producto</th>
+                      <th rowspan="1" colspan="1">Cantidad</th>
+                      <th rowspan="1" colspan="1">Marca</th>
+                      <th rowspan="1" colspan="1">Proveedor</th>
                       <th rowspan="1" colspan="1">Acciones</th>
                     </tr>
-                  <tbody>
-                  <?php
-  $id = $_SESSION['ID_Usuario'];
-                $sql = "SELECT * FROM  sucursal WHERE ID_Usuario = '$id'";
-  $verificar = $conexion->query($sql);
+                  <tbody>  
 
-                  while($row = $verificar->fetch_array(MYSQLI_ASSOC)){
-
-                  ?>
                   <tr role="row" class="odd">
-                      <td><?php echo $row['ID_Sucursal'] ?></td>
-                      <td>255425244</td>
-                      <td>Tokyo tienda</td>
-                      <td>hhhh@hhhh.com</td>
-                      <td>8754623</td>
-                      <td></td>
+                      <td>1</td>
+                      <td>portatil</td>
+                      <td>10</td>
+                      <td>dell</td>
+                      <td>Dell incorpo</td>
+                      <td>
+                        </a><i></i>
+                      </td>
                     </tr>
-                    <?php
-                  }
-                    ?>
                   </tbody>
                 </table>
               </div>
@@ -295,8 +303,3 @@ if (isset($_SESSION['Email'])) {
 
 </body>
   </html>
-  <?php
-}else{
-  echo "<script>location.href='index.php'</script>";
-}
-?>
