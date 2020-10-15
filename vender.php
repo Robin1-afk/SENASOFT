@@ -43,7 +43,7 @@
       <li class="nav-item">
         <a class="nav-link" href="vender.php">
           
-          <span>vender</span></a>
+          <span>Facturacion</span></a>
       </li>
        <hr class="sidebar-divider my-0">
       <li class="nav-item">
@@ -136,7 +136,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <h1 class="h3 mb-2 text-gray-800">Vender</h1>
+          <h1 class="h3 mb-2 text-gray-800">Facturacion</h1>
 
 
     <form id="contact-form" method="post" action="" role="form">
@@ -184,7 +184,11 @@
                       <input id="form_dire" type="text" name="direccion" class="form-control" placeholder="ingrese direccion " required="required" data-error="Firstname is required.">
                       <div class="help-block with-errors"></div>
                   </div>
-                  
+                  <div class="form-group">
+                      <label for="form_name">Fecha</label>
+                      <input id="form_name" type="date" name="fecha" class="form-control" placeholder=" " required="required" data-error="Firstname is required.">
+                      <div class="help-block with-errors"></div>
+                  </div>
               </div>
           </div>  
     </form>

@@ -58,7 +58,12 @@
           <span>Productos vendidos</span></a>
       </li>
        <hr class="sidebar-divider my-0">
-      
+       <li class="nav-item">
+        <a class="nav-link" href="facturacionsucursal.php">
+          
+          <span>Facturacion</span></a>
+      </li>
+       <hr class="sidebar-divider my-0">
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -123,7 +128,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <a href="productosvendidos.php" style="text-decoration: none;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <a href="" style="text-decoration: none;"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                   </a>
               </div>
@@ -136,7 +141,47 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          
+          <h1 class="h3 mb-2 text-gray-800">Productos Vendidos</h1>
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Tabla de inventario bodega</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                  <div class="row"><div class="col-sm-12">
+                    <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div>
+                    <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <tr>
+                      <th rowspan="1" colspan="1">#</th>
+                      <th rowspan="1" colspan="1">Productos</th>
+                      <th rowspan="1" colspan="1">Clientes</th>
+                      <th rowspan="1" colspan="1">Cantidad</th>
+                      
+                      
+                      
+                    </tr>
+                  <tbody>  
+                  <tr role="row" class="odd">
+                      <td>1</td>
+                      <td>portatil</td>
+                      <td>jose mercado</td>
+                      <td>80</td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+          </div>
+
+                    
+                  </div>
+                </div>
+              </div>
+            
         
         <!-- /.container-fluid -->
 
